@@ -27,9 +27,7 @@
 		847619881EA6C1D9005BB671 /* nshift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = nshift; sourceTree = BUILT_PRODUCTS_DIR; };
 		8476198B1EA6C1D9005BB671 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		847619931EA6C1F5005BB671 /* CoreBrightness.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBrightness.framework; path = ../../../../System/Library/PrivateFrameworks/CoreBrightness.framework; sourceTree = "<group>"; };
-		847619951EA6C7C8005BB671 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		847619961EA6C893005BB671 /* CBBlueLightClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CBBlueLightClient.h; sourceTree = "<group>"; };
-		84AAAFA91EAB1837008E4ED8 /* LICENSE.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +64,6 @@
 			children = (
 				8476198B1EA6C1D9005BB671 /* main.m */,
 				847619961EA6C893005BB671 /* CBBlueLightClient.h */,
-				84AAAFA91EAB1837008E4ED8 /* LICENSE.txt */,
-				847619951EA6C7C8005BB671 /* README.md */,
 			);
 			path = nshift;
 			sourceTree = "<group>";
