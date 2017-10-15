@@ -16,10 +16,45 @@
 #import "CBBlueLightClient.h"
 
 int main(int argc, const char * argv[]) {
-    if (argc == 1) { return 0; }
-    float strength = [[NSString stringWithUTF8String:argv[1]] floatValue] / 100;
-    CBBlueLightClient *client = [[CBBlueLightClient alloc] init];
-    if (strength != 0.0) { [client setStrength:strength commit:true]; }
-    [client setEnabled:(strength != 0.0)];
+    if (argc == 1) {
+        return 0;
+    }
+
+    CBBlueLightClient *client = [CBBlueLightClient new];
+
+    NSString *argument = [NSString stringWithUTF8String:argv[1]];
+
+    if ([@[@"--help", @"-h"] containsObject:argument]) {
+        NSArray *usageLines = @[@"Usage: nshift <0-100> to set strength",
+                                @"       nshift on      to turn NightShift on",
+                                @"       nshift off     to turn NightShift off",
+                                @"       nshift reset   to cycle NightShift (turn it off and on) to help with some external displays",
+                                @""];
+
+        printf([usageLines componentsJoinedByString:@"\n"].UTF8String);
+    }
+    if ([argument isEqualToString:@"off"]) {
+        [client setEnabled:NO];
+    }
+    else if ([argument isEqualToString:@"on"]) {
+        [client setEnabled:YES];
+    }
+    else if ([argument isEqualToString:@"reset"]) {
+        [client setEnabled:YES];
+        [client setEnabled:NO];
+    }
+    else {
+        float strength = [[NSString stringWithUTF8String:argv[1]] floatValue] / 100;
+
+        if (strength != 0.0) {
+            [client setStrength:strength commit:true];
+            [client setEnabled:YES];
+        }
+        else {
+            [client setEnabled:NO];
+        }
+    }
+
     return 0;
 }
+
